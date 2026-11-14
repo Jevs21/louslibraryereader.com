@@ -33,11 +33,14 @@
 <li>When a highlight, note, bookmark or dictionary word is added, a reading goal is set or reached, or data is exported or imported.</li>
 <li>With each batch: the app version, iOS version, device model, whether the app came from the App Store or TestFlight, and the region in your language settings (not your location).</li>
 </ul>
-<p>It never includes your books, their titles or file names, your highlights or notes, or anything you type. Usage data carries no ID of any kind, so it can't be traced to your device or to you. Your IP address isn't recorded. To check that requests come from the real app, the server keeps a key for each install, which is stored apart from usage data and never linked to it.</p>
+<p>It never includes your books, their titles or file names, your highlights or notes, or anything you type. Usage data carries no ID of any kind, so it can't be traced to your device or to you. Your IP address isn't recorded. Like everything the app sends, it's checked with the app's key (see below), which is never stored with it.</p>
 <p>Usage data is stored on the app's own server, read only by the developer, and kept indefinitely. It isn't shared, sold or used for advertising. Because it can't be traced to you, it can't be looked up or deleted for one person.</p>
 <p>To stop sending it, turn off Share Anonymous Usage Data in Profile → Data. Nothing is sent while it's off, and events waiting to be sent are discarded.</p>
 <h2>Louie's pet count</h2>
 <p>Tapping Louie's photo on the About page adds one to a shared count of pets. Only the total is stored, with nothing about you or your device.</p>
+<h2>Checking requests come from the app</h2>
+<p>So that only the real app can send feedback, usage data or pets, it uses Apple's App Attest. Once per install, the app makes a random key that Apple confirms belongs to a genuine copy of the app, and the server keeps that key's ID. Every later request is signed with the key, and the server checks the signature.</p>
+<p>The key ID is stored on its own, with no dates or times, and is never stored with your feedback, usage data or pets, or written to logs. It's used only for this check, not to identify you or to follow what you do. Reinstalling the app makes a new key.</p>
 <p>If you email support, we use your email address and message only to reply to you.</p>
 <p>If this policy changes, this page will be updated before that version of the app is released.</p>
 <p>Questions: <a href="mailto:support@louslibraryereader.com">support@louslibraryereader.com</a></p>
